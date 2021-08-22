@@ -11,5 +11,31 @@ namespace ExplosionAPI.Controllers
     [ApiController]
     public class MumblingController : ControllerBase
     {
+        [HttpGet]
+        public static String Accumulate(string s)
+        {
+            var result = "";
+
+            for (var i = 0; i < s.Length; i++)
+            {
+                for (var j = 0; j <= i; j++)
+                {
+                    if (j == 0)
+                    {
+                        var capitalizedChar = Char.ToUpper(s[i]);
+                        result += capitalizedChar;
+                    }
+                    else
+                    {
+                        result += Char.ToLower(s[i]);
+                    }
+                }
+                if (i != s.Length - 1)
+                {
+                    result += '-';
+                }
+            }
+            return result;
+        }
     }
 }
