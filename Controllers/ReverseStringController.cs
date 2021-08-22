@@ -11,5 +11,19 @@ namespace ExplosionAPI.Controllers
     [ApiController]
     public class ReverseStringController : ControllerBase
     {
+        [HttpGet]
+        public static string Solution(string str)
+        {
+            var reverseString = "";
+
+            var length = str.Length - 1;
+
+            while (length >= 0)
+            {
+                reverseString += str[length];
+                length--;
+            }
+            return reverseString;
+        }
     }
 }
