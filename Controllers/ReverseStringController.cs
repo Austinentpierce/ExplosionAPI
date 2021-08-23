@@ -14,16 +14,16 @@ namespace ExplosionAPI.Controllers
         [HttpGet]
         public static string Solution(string str)
         {
-            var reverseString = "";
+            var reversedString = "";
 
             var length = str.Length - 1;
 
             while (length >= 0)
             {
-                reverseString += str[length];
+                reversedString += str[length];
                 length--;
             }
-            return reverseString;
+            return reversedString;
         }
     }
 }
